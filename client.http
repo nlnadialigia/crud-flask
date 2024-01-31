@@ -1,7 +1,38 @@
-@url=http://127.0.0.1:5000
+@baseUrl=http://127.0.0.1:5000
+
+# @name create_task
+POST  {{baseUrl}}/task
+Content-Type: application/json
+
+{
+  "title": "Task 01",
+  "description": "Descrição da Task 01"
+}
 
 ###
 
-GET {{url}} HTTP/1.1
+# @name list_task
+GET   {{baseUrl}}/tasks
+Content-Type: application/json
+
 
 ###
+
+# @name update_task
+PUT   {{baseUrl}}/tasks/:taskId
+Content-Type: application/json
+
+{
+  "title": "Task 01",
+  "description": "Atualização Task 01",
+  "completed": false
+}
+
+###
+
+# @name delete_task
+DELETE    {{baseUrl}}/tasks/:taskId
+
+###
+
+
