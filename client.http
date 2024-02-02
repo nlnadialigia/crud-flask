@@ -5,14 +5,20 @@ POST  {{baseUrl}}/tasks
 Content-Type: application/json
 
 {
-  "title": "Task 02",
-  "description": "Descrição da Task 02"
+  "title": "Task 01",
+  "description": "Descrição da Task 01"
 }
 
 ###
 
 # @name list_task
 GET   {{baseUrl}}/tasks
+Content-Type: application/json
+
+###
+
+# @name task_by_id
+GET   {{baseUrl}}/tasks/1
 Content-Type: application/json
 
 
