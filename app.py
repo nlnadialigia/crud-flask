@@ -6,6 +6,8 @@ app = Flask(__name__)
 tasks = []
 task_id_control = 1
 
+not_found = 'Task não encontrada'
+
 
 @app.route('/tasks', methods=['POST'])
 def create_task():
@@ -41,7 +43,7 @@ def get_task_by_id(id):
         if t.id == id:
             return jsonify(t.to_dict())
 
-    return jsonify({'message': 'Task não encontrada'}), 404
+    return jsonify({'message': not_found}), 404
 
 
 @app.route('/tasks/<int:id>', methods=['PUT'])
@@ -52,7 +54,7 @@ def update_task(id):
             task = t
 
     if not task:
-        return jsonify({'message': 'Task não encontrada'}), 404
+        return jsonify({'message': not_found}), 404
 
     data = request.get_json()
     task.title = data['title']
@@ -60,6 +62,22 @@ def update_task(id):
     task.completed = data['completed']
 
     return jsonify({'message': 'Task atualizada com sucesso', 'data': data})
+
+
+@app.route('/tasks/<int:id>', methods=['DELETE'])
+def delete_task(id):
+    task = None
+    for t in tasks:
+        if t.id == id:
+            task = t
+            break
+
+    if not task:
+        return jsonify({'message': not_found}), 404
+
+    tasks.remove(task)
+
+    return jsonify({'message': 'Task deletada com sucesso'})
 
 
 if __name__ == "__main__":
