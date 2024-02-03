@@ -27,8 +27,31 @@ def test_get_tasks():
 def test_get_task_by_id():
     if tasks:
         task = tasks[0]
-        print(task)
-    response = requests.get(f'{BASE_URL}/{task}')
-    assert response.status_code == 200
-    body = response.json()
-    assert task == body['id']
+        response = requests.get(f'{BASE_URL}/{task}')
+        assert response.status_code == 200
+        body = response.json()
+        assert task == body['id']
+
+
+def test_update_task():
+    if tasks:
+        task = tasks[0]
+        payload = {
+            "title": "Task 01",
+            "description": "Atualização Task 01",
+            "completed": False
+        }
+        response = requests.put(f'{BASE_URL}/{task}', json=payload)
+        assert response.status_code == 200
+        body = response.json()
+        assert body['data'] == payload
+
+
+def test_delete_task():
+    if tasks:
+        task = tasks[0]
+        response = requests.delete(f'{BASE_URL}/{task}')
+        assert response.status_code == 200
+
+        response = requests.get(f'{BASE_URL}/{task}')
+        assert response.status_code == 404
