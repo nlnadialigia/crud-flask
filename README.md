@@ -51,6 +51,9 @@ $ pip install
 # Execute a aplicação em modo de desenvolvimento
 $ python3 app.py
 
+# Rodar os testes
+$ pytest tests.py -v
+
 # O servidor inciará na porta:5000 - acesse http://127.0.0.1:5000
 
 ```
