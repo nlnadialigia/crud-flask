@@ -66,6 +66,7 @@ $ pytest tests.py -v
 
 - [Python](https://www.python.org)
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+- [Pytest](https://docs.pytest.org/en/7.1.x/contents.html)
 
 #### 🎲 Documentação
 
