@@ -1,4 +1,5 @@
 @baseUrl=http://127.0.0.1:5000
+@taskId=1
 
 # @name create_task
 POST  {{baseUrl}}/tasks
@@ -18,14 +19,14 @@ Content-Type: application/json
 ###
 
 # @name task_by_id
-GET   {{baseUrl}}/tasks/1
+GET   {{baseUrl}}/tasks/{{taskId}}
 Content-Type: application/json
 
 
 ###
 
 # @name update_task
-PUT   {{baseUrl}}/tasks/:taskId
+PUT   {{baseUrl}}/tasks/{{taskId}}
 Content-Type: application/json
 
 {
@@ -37,7 +38,7 @@ Content-Type: application/json
 ###
 
 # @name delete_task
-DELETE    {{baseUrl}}/tasks/:taskId
+DELETE    {{baseUrl}}/tasks/{{taskId}}
 
 ###
 
