@@ -1,13 +1,13 @@
 @baseUrl=http://127.0.0.1:5000
-@taskId=5
+@taskId=1
 
 # @name create_task
 POST  {{baseUrl}}/tasks
 Content-Type: application/json
 
 {
-  "title": "Task 01",
-  "description": "Descrição da Task 01"
+  "title": "Task 02",
+  "description": "Descrição da Task 02"
 }
 
 ###
