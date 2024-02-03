@@ -22,7 +22,7 @@
 
 CRUD de Gerenciamento de Tarefas desenvolvido em Python com Flask da Trilha de Python da [Rocketseat](https://www.rocketseat.com.br/).
 
-![Em construção](https://ik.imagekit.io/l7cwocexhc/crud-flask/em-contrucao.png?updatedAt=1706705289779)
+<!-- ![Em construção](https://ik.imagekit.io/l7cwocexhc/crud-flask/em-contrucao.png?updatedAt=1706705289779) -->
 
 <br>
 
